@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "useDefineForClassFields": true,
+    "module": "esnext",
+    "lib": ["esnext", "dom"],
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    "moduleResolution": "node",
+    "allowImportingTsExtensions": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "preserve",
+    "allowJs": true,
+    "esModuleInterop": true,
+    
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": false,
+
+    /* absolute import setting */
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "types": [
+      // "@intlify/unplugin-vue-i18n",
+      "vite/client",
+      // "element-plus/global",
+    ],
+    "typeRoots": ["./node_modules/@types/", "./types"]
+  },
+  "references": [{ "path": "./tsconfig.node.json" }],
+  "include": ["src/**/*", "types/**/*.d.ts"],
+  "exclude": ["node_modules", "dist"]
+}
