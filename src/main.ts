@@ -2,7 +2,9 @@ import { createApp } from "vue";
 
 import { setupStore } from "@/store";
 
-import "./style.css";
+import "@/style/index.scss";
+import 'virtual:uno.css'
+
 import App from "./App.vue";
 
 const setupAll = async () => {

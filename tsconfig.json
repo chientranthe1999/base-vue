@@ -30,13 +30,10 @@
       "@/*": ["src/*"]
     },
     "types": [
-      // "@intlify/unplugin-vue-i18n",
-      "vite/client",
-      // "element-plus/global",
     ],
     "typeRoots": ["./node_modules/@types/", "./types"]
   },
-  "references": [{ "path": "./tsconfig.node.json" }],
   "include": ["src/**/*", "types/**/*.d.ts"],
-  "exclude": ["node_modules", "dist"]
+  "exclude": ["dist", "node_modules"],
+  "references": [{ "path": "./tsconfig.node.json" }],
 }

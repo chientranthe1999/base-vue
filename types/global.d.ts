@@ -1,6 +1,8 @@
 declare global {
   declare type LocaleType = "vi" | "en";
 
+  declare type Nullable<T> = T | null
+
   declare type AxiosHeaders =
     | "application/json"
     | "application/x-www-form-urlencoded"
@@ -16,3 +18,4 @@ declare global {
     | "text"
     | "stream";
 }
+export {}

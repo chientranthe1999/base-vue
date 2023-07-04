@@ -1,7 +1,10 @@
 import { defineConfig } from "vite";
-import vue from "@vitejs/plugin-vue";
+import Vue from "@vitejs/plugin-vue";
 import { resolve } from "path";
 import VueI18nPlugin from "@intlify/unplugin-vue-i18n/vite";
+import VueJsx from '@vitejs/plugin-vue-jsx'
+import UnoCSS from 'unocss/vite'
+
 
 const root = process.cwd();
 
@@ -12,12 +15,14 @@ function pathResolve(dir: string) {
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    vue(),
+    Vue(),
+    VueJsx(),
     VueI18nPlugin({
       runtimeOnly: true,
       compositionOnly: true,
       include: [resolve(__dirname, "src/locales/**")],
     }),
+    UnoCSS()
   ],
   resolve: {
     extensions: [

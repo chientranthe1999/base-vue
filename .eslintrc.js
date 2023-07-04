@@ -1,6 +1,5 @@
-// @ts-check
-const { defineConfig } = require('eslint-define-config')
-module.exports = defineConfig({
+import { defineConfig } from 'eslint-define-config'
+export default defineConfig({
   root: true,
   env: {
     browser: true,
