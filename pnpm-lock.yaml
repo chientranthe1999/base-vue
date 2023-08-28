@@ -115,6 +115,9 @@ devDependencies:
   vue-tsc:
     specifier: ^1.4.2
     version: 1.4.2(typescript@5.0.2)
+  web-storage-cache:
+    specifier: ^1.1.1
+    version: 1.1.1
 
 packages:
 
@@ -3867,6 +3870,10 @@ packages:
       '@vue/runtime-dom': 3.3.0
       '@vue/server-renderer': 3.3.0(vue@3.3.0)
       '@vue/shared': 3.3.0
+
+  /web-storage-cache@1.1.1:
+    resolution: {integrity: sha512-D0MieGooOs8RpsrK+vnejXnvh4OOv/+lTFB35JRkJJQt+uOjPE08XpaE0QBLMTRu47B1KGT/Nq3Gbag3Orinzw==}
+    dev: true
 
   /webpack-sources@3.2.3:
     resolution: {integrity: sha512-/DyMEOrDgLKKIG0fmvtz+4dUX/3Ghozwgm6iPp8KRhvn+eQf9+Q7GWxVNMk3+uCPWfdXYC4ExGBckIXdFEfH1w==}

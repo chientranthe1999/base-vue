@@ -1,41 +1,41 @@
-import type { App } from "vue";
-import { createI18n } from "vue-i18n";
-import type { I18n, I18nOptions } from "vue-i18n";
-// import { useLocaleStoreWithOut } from "@/store/modules/locale";
-import { setHtmlPageLang } from "./helper";
+import type { App } from 'vue'
+import { createI18n } from 'vue-i18n'
+import type { I18n, I18nOptions } from 'vue-i18n'
+import { useLocaleStoreWithOut } from '@/store/modules/locale'
+import { setHtmlPageLang } from '@/utils/common'
 
-export let i18n: ReturnType<typeof createI18n>;
+export let i18n: ReturnType<typeof createI18n>
 
 const createI18nOptions = async (): Promise<I18nOptions> => {
-  const localeStore = useLocaleStoreWithOut();
-  const locale = localeStore.getCurrentLocale;
-  const localeMap = localeStore.getLocaleMap;
-  const defaultLocal = await import(`../../locales/${locale.lang}.ts`);
-  const message = defaultLocal.default ?? {};
+  const localeStore = useLocaleStoreWithOut()
+  const locale = localeStore.getCurrentLocale
+  const localeMap = localeStore.getLocaleMap
+  const defaultLocal = await import(`../../locales/${locale.lang}.ts`)
+  const message = defaultLocal.default ?? {}
 
-  setHtmlPageLang(locale.lang);
+  setHtmlPageLang(locale.lang)
 
   localeStore.setCurrentLocale({
-    lang: locale.lang,
-  });
+    lang: locale.lang
+  })
 
   return {
     legacy: false,
     locale: locale.lang,
     fallbackLocale: locale.lang,
     messages: {
-      [locale.lang]: message,
+      [locale.lang]: message
     },
     availableLocales: localeMap.map((v) => v.lang),
     sync: true,
     silentTranslationWarn: true,
     missingWarn: false,
-    silentFallbackWarn: true,
-  };
-};
+    silentFallbackWarn: true
+  }
+}
 
 export const setupI18n = async (app: App<Element>) => {
-  const options = await createI18nOptions();
-  const i18n = createI18n(options) as I18n;
-  app.use(i18n);
-};
+  const options = await createI18nOptions()
+  const i18n = createI18n(options) as I18n
+  app.use(i18n)
+}

@@ -1,17 +1,26 @@
-import { createApp } from "vue";
+import { createApp } from 'vue'
 
-import { setupStore } from "@/store";
+import { setupStore } from '@/store'
 
-import "@/style/index.scss";
+import { setupRouter } from '@/router'
+
+import { setupElementPlus } from '@/plugins/element-plus'
+
+import '@/style/index.scss'
 import 'virtual:uno.css'
 
-import App from "./App.vue";
+import App from './App.vue'
 
-const setupAll = async () => {
-  const app = createApp(App);
+const bootstrap = async () => {
+  const app = createApp(App)
 
-  setupStore(app); // store
+  setupRouter(app)
 
-  app.mount("#app");
-};
-setupAll();
+  setupStore(app)
+
+  setupElementPlus(app)
+
+  app.mount('#app')
+}
+
+bootstrap()

@@ -9,3 +9,4 @@
 /plop/**/*
 CHANGELOG
 tsconfig.json
+*.md
